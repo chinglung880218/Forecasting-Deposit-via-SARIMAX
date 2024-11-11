@@ -1,0 +1,294 @@
+---
+title: "IDS 789"
+output: html_document
+date: "2024-11-11"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+install.packages("readxl")
+library(readxl)
+
+install.packages("dplyr")
+library(dplyr)
+```
+
+## Data Setup
+
+### FDIC Quarterly Banking Profile
+
+```{r}
+data <- read_excel("balance-sheet (3).xlsx")
+
+# Remove the first 3 rows
+data <- data[-c(1:3), ]
+
+# Remove rows that are completely blank
+data <- data[rowSums(is.na(data) | data == "") < ncol(data), ]
+```
+
+```{r}
+# Extract the current variable names (first row) as a new column
+time <- as.character(data[1, ])
+time <- time[-1]
+
+# Set the entries in the first column as the new variable names
+row_names <- data[[1]]
+row_names <- row_names[-c(1, length(row_names))]
+
+# Remove the first row and the first column
+data1 <- data[-1, -1]
+
+# Transpose the data
+data1 <- t(data1)  # Corrected to transpose the reduced data frame, data1
+data1 <- data1[, -91]
+data1 <- as.data.frame(data1, stringsAsFactors = FALSE)
+
+# Define variable names
+colnames(data1) <- row_names
+
+# Add a columns showing period of time
+data1 <- data1 %>%
+  mutate(
+    time = time,
+    year = as.numeric(substr(time, 1, 4)),
+    quarter = as.numeric(substr(time, 6, 6))) %>%
+  select(time, year, quarter, everything())
+
+# Change variable names
+
+```
+
+```{r}
+# Assuming the first three columns are already named correctly
+# Assign new variable names starting from the fourth column
+colnames(data1)[4:ncol(data1)] <- c("loans_re", "loans_res_mort", "loans_nonres", 
+                                    "loans_constr", "loans_hel", "loans_multi", 
+                                    "loans_farmland", "loans_foreign_re", "loans_com_ind", 
+                                    "loans_indiv", "loans_cc", "loans_indiv_other", 
+                                    "loans_auto", "loans_farm", "loans_dep", 
+                                    "loans_foreign_gov", "obligations_US", "loans_other", 
+                                    "accept_banks", "lease_receiv", "loans_leases_gross", 
+                                    "unearned_income", "loans_leases", "reserve_losses", 
+                                    "loans_leases_net", "securities", "sec_avail_sale", 
+                                    "sec_held_mat", "sec_treasury", "sec_mtg_backed", 
+                                    "sec_state_muni", "sec_equity", "cash_due_dep", 
+                                    "fed_funds_sold", "bank_fixed_assets", "re_owned_other", 
+                                    "trading_assets", "assets_intang", "mtg_serv_assets", 
+                                    "fv_mtg_serv", "goodwill", "assets_other", 
+                                    "liab_cap", "deposits", "deposits_foreign", 
+                                    "deposits_domestic", "deposits_interest", 
+                                    "deposits_noninterest", "deposits_insured", 
+                                    "deposits_time", "deposits_brokered", 
+                                    "fed_funds_purch", "fhlb_advances", "borrowed_other", 
+                                    "bank_accept_liab", "debt_subord", "trading_liab", 
+                                    "liab_other", "liab", "equity_cap", "bank_eq_cap", 
+                                    "stock_pref", "stock_common", "surplus", 
+                                    "profits", "forex_adj", "inc_comprehensive", 
+                                    "gains_afs_sec", "tier1_leverage", "tier1_risk", 
+                                    "risk_cap", "loans_30_89_due", "loans_90plus_due", 
+                                    "loans_nonaccrual", "loans_restructured", 
+                                    "income_uncollected", "loans_foreign_office", 
+                                    "assets_foreign_office", "loans_held_sale", 
+                                    "assets_earning", "loan_commit", "hel_unused", 
+                                    "cc_lines_unused", "com_re_unused", "loan_commit_other", 
+                                    "com_re_unsec_unused", "sec_underwriting")
+```
+
+```{r}
+# Change second instance of "loans_re"
+colnames(data1)[colnames(data1) == "loans_re"][2] <- "loans_re_alt"    
+# Change second instance of "loans_res_mort"
+colnames(data1)[colnames(data1) == "loans_res_mort"][2] <- "loans_res_mort_alt"
+# Change second instance of "loans_nonres"
+colnames(data1)[colnames(data1) == "loans_nonres"][2] <- "loans_nonres_alt"
+```
+
+### JPM Stock Price
+
+```{r}
+install.packages("tidyquant")
+library(tidyquant)
+
+install.packages("lubridate")
+library(lubridate)
+```
+
+```{r}
+# Get daily JPM stock data
+jpm_data <- tq_get("JPM", from = "1984-01-01", to = Sys.Date())
+
+# Aggregate to quarterly data
+jpm_quarterly <- jpm_data %>%
+  mutate(year = year(date), quarter = quarter(date)) %>%
+  group_by(year, quarter) %>%
+  summarise(
+    open = first(open, na.rm = TRUE),               # Opening price of the first day of the quarter
+    high = max(high, na.rm = TRUE),                 # Highest price during the quarter
+    low = min(low, na.rm = TRUE),                   # Lowest price during the quarter
+    close = last(close, na.rm = TRUE),              # Closing price of the last day of the quarter
+    volume = sum(volume, na.rm = TRUE),             # Total volume during the quarter
+    adjusted = last(adjusted, na.rm = TRUE)         # Adjusted close of the last day of the quarter
+  ) %>%
+  ungroup() %>%
+  mutate(date = as.Date(paste(year, quarter * 3 - 2, 1, sep = "-"))) %>%
+  select(date, open, high, low, close, volume, adjusted)
+```
+
+```{r}
+# Rename columns in jpm_quarterly to include "JPM" prefix
+jpm_quarterly <- jpm_quarterly %>%
+  rename_with(~ paste0("JPM_", .), -date)
+
+# Ensure `jpm_quarterly` has `year` and `quarter` columns
+jpm_quarterly <- jpm_quarterly %>%
+  mutate(
+    year = year(date), 
+    quarter = quarter(date))
+
+# Step 3: Join the data frames on the "date" column
+data2 <- left_join(data1, jpm_quarterly, by = c("year", "quarter"))
+```
+
+
+## Data Breakdown
+```{r}
+# Replace placeholders with NA
+data2 <- data2 %>% mutate(across(everything(), as.character))
+data2 <- data2 %>%
+  mutate(across(everything(), ~ na_if(.x, "")),
+         across(everything(), ~ na_if(.x, "N/A")),
+         across(everything(), ~ na_if(.x, "NULL"))) 
+
+# Count NAs in each column
+sapply(data2, function(x) sum(is.na(x)))
+
+# Group by 'year' and count the number of NAs in each column
+data2 %>%
+  group_by(year) %>%
+  summarise(across(everything(), ~ sum(is.na(.))))
+
+# Ensure correct data type
+data2 <- data2 %>%
+  mutate(across(-c(time, date), as.numeric))
+```
+
+```{r}
+summary(data2)
+```
+
+
+## Visualize Time Series Trends
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+```{r}
+# Create a date column from year and quarter for plotting
+data2 <- data2 %>%
+  mutate(date = as.Date(paste(year, quarter * 3 - 2, 1, sep = "-")))
+```
+
+
+```{r}
+ggplot(data2, aes(x = date, y = JPM_close)) +
+  geom_line(color = "blue") +
+  labs(title = "JPMorgan Chase Quarterly Closing Price", 
+       x = "Date", 
+       y = "Closing Price (in $)") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data2, aes(x = date, y = JPM_volume)) +
+  geom_line(color = "darkgreen") +
+  labs(title = "JPMorgan Chase Quarterly Trading Volume", 
+       x = "Date", 
+       y = "Volume") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data2, aes(x = date, y = deposits)) +
+  geom_line(color = "orange") +
+  labs(title = "Deposit Over Time", 
+       x = "Date", 
+       y = "Total Deposit (in $ Millions)") +
+  theme_minimal()
+```
+```{r}
+ggplot(data2, aes(x = date, y = liab)) +
+  geom_line(color = "red") +
+  labs(title = "Total Liability Over Time", x = "Date", y = "Liability (in $ Millions)") +
+  theme_minimal()
+```
+
+
+```{r}
+ggplot(data2, aes(x = date, y = loans_re)) +
+  geom_line(color = "brown") +
+  labs(title = "Loans Secured by Real Estate Over Time", 
+       x = "Date", 
+       y = "Loans Secured (in $ Millions)") +
+  theme_minimal()
+```
+
+## Correlation Analysis
+
+```{r}
+numeric_data <- data2 %>% select(where(is.numeric))
+
+# Impute missing values with column mean
+imputed_data <- numeric_data %>%
+  mutate(across(everything(), ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)))
+
+# Calculate correlations between numeric columns
+correlation_matrix <- cor(imputed_data, use = "complete.obs")
+```
+
+### Heatmap
+
+```{r}
+install.packages("reshape2")
+library(reshape2)
+```
+
+```{r}
+# Convert the correlation matrix to a long format and get absolute correlations
+melted_corr <- melt(correlation_matrix) %>%
+  filter(Var1 != Var2) %>%                           # Exclude self-correlations
+  mutate(abs_value = abs(value)) %>%                 # Calculate absolute correlation values
+  arrange(desc(abs_value))                           # Sort by highest absolute correlation
+
+# Select the top 20 highest correlations
+top_10_correlations <- melted_corr %>%
+  slice(1:1000) %>%
+  select(Var1, Var2, value)
+
+# Display the top 10 correlated variable pairs
+print(top_10_correlations)
+```
+
+
+```{r}
+melted_corr <- melt(correlation_matrix)
+
+# Plot heatmap
+ggplot(data = melted_corr, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 0,
+                       limit = c(-1, 1), space = "Lab",
+                       name="Correlation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  labs(title = "Correlation Matrix Heatmap", x = "Variables", y = "Variables")
+```
+```{r}
+install.packages("haven")
+library(haven)
+write_dta(data2, "data2.dta")
+```
+
