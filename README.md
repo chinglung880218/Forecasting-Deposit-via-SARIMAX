@@ -1,4 +1,5 @@
 # Deposit Volume Forecasting for ALM Using SARIMAX: A Scenario-Based Approach
+### by Jiayi Wang & Ching-Lung Hsu
 
 ## Overview
 This project focuses on forecasting deposit volumes to support Asset Liability Management (ALM) using time series techniques, specifically SARIMAX (Seasonal AutoRegressive Integrated Moving Average with exogenous factors). The project aims to provide actionable insights for managing liquidity, funding costs, and interest rate risks by leveraging historical data and macroeconomic indicators. Additionally, it incorporates scenario analysis to evaluate deposit behavior under varying economic conditions.
