@@ -1,7 +1,7 @@
 # Deposit Volume Forecasting for ALM Using SARIMAX: A Scenario-Based Approach
 
 ## Overview
-This project focuses on forecasting deposit volumes to support Asset Liability Management (ALM) using time series techniques, specifically SARIMAX (Seasonal AutoRegressive Integrated Moving Average with eXogenous factors). By leveraging historical data and macroeconomic indicators, the project aims to provide actionable insights for managing liquidity, funding costs, and interest rate risks. Additionally, it incorporates scenario analysis to evaluate deposit behavior under varying economic conditions.
+This project focuses on forecasting deposit volumes to support Asset Liability Management (ALM) using time series techniques, specifically SARIMAX (Seasonal AutoRegressive Integrated Moving Average with exogenous factors). The project aims to provide actionable insights for managing liquidity, funding costs, and interest rate risks by leveraging historical data and macroeconomic indicators. Additionally, it incorporates scenario analysis to evaluate deposit behavior under varying economic conditions.
 
 ---
 
@@ -66,11 +66,6 @@ This project focuses on forecasting deposit volumes to support Asset Liability M
 
 ### Statistical Techniques
 - SARIMAX modeling
-- Regression analysis
-- Stress-test scenario simulation
-
-### Visualization Tools
-- Tableau, Power BI, or Python-based tools like Plotly.
 
 ---
 
@@ -79,13 +74,3 @@ This project bridges data analytics and financial decision-making by providing a
 
 ---
 
-## Getting Started
-### Prerequisites
-- Python 3.8 or above
-- Libraries: pandas, statsmodels, numpy, scikit-learn, matplotlib, and Plotly
-- Access to FDIC or FRED data for historical deposit and macroeconomic variables.
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository_url>
