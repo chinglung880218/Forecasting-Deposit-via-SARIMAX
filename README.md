@@ -58,7 +58,6 @@ This project focuses on forecasting deposit volumes to support Asset Liability M
 ## Tools and Skills
 ### Programming
 - **Python**: Libraries include pandas, statsmodels, scikit-learn, matplotlib, and Plotly.
-- **R** (Optional): Libraries such as forecast and ggplot2.
 
 ### Data Sources
 - FDIC Quarterly Banking Profiles
