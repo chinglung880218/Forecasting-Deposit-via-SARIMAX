@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+ARIMA/.ipynb_checkpoints/ARIMA-checkpoint.ipynb
+=======
 *.swp
 deposit-prediction/
+>>>>>>> d9990347e69273f48dc28290eee8a619bc639e9a
+.DS_Store
