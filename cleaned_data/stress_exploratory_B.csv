@@ -1,14 +1,14 @@
-Scenario Name,Date,Real GDP growth,Nominal GDP growth,Real disposable income growth,Nominal disposable income growth,Unemployment rate,CPI inflation rate,3-month Treasury rate,5-year Treasury yield,10-year Treasury yield,BBB corporate yield,Mortgage rate,Prime rate,Dow Jones Total Stock Market Index (Level),House Price Index (Level),Commercial Real Estate Price Index (Level),Market Volatility Index (Level),Nominal GDP,Real GDP,Nominal disposable income,Real disposable income
-Exploratory Conditions B,2024Q1,-3.8,-2.4,1.0,4.1,4.5,3.4,5.9,4.9,5.0,9.7,7.9,8.9,26123.4,268.1,337.8,65.0,28620.0,23050.0,20800.0,17600.0
-Exploratory Conditions B,2024Q2,-1.8,2.1,-0.5,4.4,5.0,5.1,6.2,5.3,5.1,10.7,8.1,9.2,22753.4,251.8,326.6,70.0,29221.02,22635.1,21715.2,17512.0
-Exploratory Conditions B,2024Q3,-13.2,-8.6,-8.1,-2.9,7.1,6.0,5.9,4.9,5.0,10.8,8.0,8.9,21790.6,235.5,312.6,61.4,26708.01,19647.27,21085.46,16093.53
-Exploratory Conditions B,2024Q4,-7.0,-1.4,-4.5,0.9,8.3,5.9,5.7,4.6,4.8,10.6,7.8,8.7,21309.1,225.2,290.3,54.5,26334.1,18271.96,21275.23,15369.32
-Exploratory Conditions B,2025Q1,-4.4,1.3,-2.8,2.5,9.1,5.6,4.7,4.5,4.7,9.8,7.6,7.7,22272.0,218.3,266.6,49.1,26676.44,17467.99,21807.11,14938.98
-Exploratory Conditions B,2025Q2,-1.8,3.5,-1.7,3.5,9.7,5.4,3.6,4.4,4.6,9.2,7.1,6.6,23716.3,213.8,244.2,44.8,27610.12,17153.57,22570.36,14685.02
-Exploratory Conditions B,2025Q3,0.6,5.8,0.2,5.2,9.8,5.2,3.4,4.3,4.6,8.8,6.8,6.4,25642.0,211.6,223.3,41.5,29211.51,17256.49,23744.02,14714.39
-Exploratory Conditions B,2025Q4,0.9,5.8,0.9,5.7,10.0,5.1,3.3,4.3,4.5,8.4,6.6,6.3,28049.1,217.0,209.4,38.8,30905.78,17411.8,25097.43,14846.82
-Exploratory Conditions B,2026Q1,6.5,12.0,4.7,9.7,9.5,4.9,3.2,4.3,4.5,8.0,6.4,6.2,30937.6,224.4,211.4,36.6,34614.47,18543.57,27531.88,15544.62
-Exploratory Conditions B,2026Q2,6.1,11.2,4.9,9.8,9.0,4.7,3.2,4.2,4.5,7.8,6.3,6.2,33826.2,232.0,213.4,34.9,38491.29,19674.73,30230.0,16306.31
-Exploratory Conditions B,2026Q3,5.7,10.3,4.7,9.5,8.5,4.6,3.1,4.2,4.5,7.5,6.2,6.1,38159.0,239.7,215.3,33.6,42455.89,20796.19,33101.85,17072.71
-Exploratory Conditions B,2026Q4,5.4,9.8,4.5,9.1,8.1,4.4,3.1,4.2,4.5,7.4,6.1,6.1,42973.2,247.2,217.3,32.5,46616.57,21919.18,36114.12,17840.98
-Exploratory Conditions B,2027Q1,5.1,9.0,4.2,8.6,7.8,4.3,3.1,4.2,4.4,7.2,6.1,6.1,47787.5,254.6,219.2,31.7,50812.06,23037.06,39219.93,18590.3
+Scenario Name,Date,Real GDP growth,Nominal GDP growth,Real disposable income growth,Nominal disposable income growth,Unemployment rate,CPI inflation rate,3-month Treasury rate,5-year Treasury yield,10-year Treasury yield,BBB corporate yield,Mortgage rate,Prime rate,Dow Jones Total Stock Market Index (Level),House Price Index (Level),Commercial Real Estate Price Index (Level),Market Volatility Index (Level),Real GDP,Real disposable income
+Exploratory Conditions B,2024Q1,-3.8,-2.4,1.0,4.1,4.5,3.4,5.9,4.9,5.0,9.7,7.9,8.9,26123.4,268.1,337.8,65.0,261326.56,239214.43
+Exploratory Conditions B,2024Q2,-1.8,2.1,-0.5,4.4,5.0,5.1,6.2,5.3,5.1,10.7,8.1,9.2,22753.4,251.8,326.6,70.0,256622.68,238018.36
+Exploratory Conditions B,2024Q3,-13.2,-8.6,-8.1,-2.9,7.1,6.0,5.9,4.9,5.0,10.8,8.0,8.9,21790.6,235.5,312.6,61.4,222748.49,218738.87
+Exploratory Conditions B,2024Q4,-7.0,-1.4,-4.5,0.9,8.3,5.9,5.7,4.6,4.8,10.6,7.8,8.7,21309.1,225.2,290.3,54.5,207156.1,208895.62
+Exploratory Conditions B,2025Q1,-4.4,1.3,-2.8,2.5,9.1,5.6,4.7,4.5,4.7,9.8,7.6,7.7,22272.0,218.3,266.6,49.1,198041.23,203046.54
+Exploratory Conditions B,2025Q2,-1.8,3.5,-1.7,3.5,9.7,5.4,3.6,4.4,4.6,9.2,7.1,6.6,23716.3,213.8,244.2,44.8,194476.49,199594.75
+Exploratory Conditions B,2025Q3,0.6,5.8,0.2,5.2,9.8,5.2,3.4,4.3,4.6,8.8,6.8,6.4,25642.0,211.6,223.3,41.5,195643.35,199993.94
+Exploratory Conditions B,2025Q4,0.9,5.8,0.9,5.7,10.0,5.1,3.3,4.3,4.5,8.4,6.6,6.3,28049.1,217.0,209.4,38.8,197404.14,201793.89
+Exploratory Conditions B,2026Q1,6.5,12.0,4.7,9.7,9.5,4.9,3.2,4.3,4.5,8.0,6.4,6.2,30937.6,224.4,211.4,36.6,210235.41,211278.2
+Exploratory Conditions B,2026Q2,6.1,11.2,4.9,9.8,9.0,4.7,3.2,4.2,4.5,7.8,6.3,6.2,33826.2,232.0,213.4,34.9,223059.77,221630.83
+Exploratory Conditions B,2026Q3,5.7,10.3,4.7,9.5,8.5,4.6,3.1,4.2,4.5,7.5,6.2,6.1,38159.0,239.7,215.3,33.6,235774.18,232047.48
+Exploratory Conditions B,2026Q4,5.4,9.8,4.5,9.1,8.1,4.4,3.1,4.2,4.5,7.4,6.1,6.1,42973.2,247.2,217.3,32.5,248505.99,242489.62
+Exploratory Conditions B,2027Q1,5.1,9.0,4.2,8.6,7.8,4.3,3.1,4.2,4.4,7.2,6.1,6.1,47787.5,254.6,219.2,31.7,261179.8,252674.18
