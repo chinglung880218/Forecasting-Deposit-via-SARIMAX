@@ -3,18 +3,12 @@
 
 ## Overview
 
----
-
 This project develops a robust model to forecast domestic deposit volumes under varying macroeconomic conditions, leveraging **SARIMAX** (Seasonal AutoRegressive Integrated Moving Average with Exogenous Variables). **This approach offers interpretability, scenario-specific forecasting, and insights into a bank’s financial exposure.** By incorporating key macroeconomic drivers such as GDP, Treasury rates, unemployment rates, housing prices, and CPI, the model provides a comprehensive view of how external factors influence deposit trends. Additionally, scenario-based modeling using Federal Reserve stress test scenarios ensures the forecasts align with realistic economic conditions, enhancing their applicability to strategic decision-making. The results empower treasury teams with actionable insights to optimize liquidity planning, interest rate risk management, and overall balance sheet resilience.
-
----
 
 ## Objectives
 1. **Interpretability:** Analyze the correlations and influence between macroeconomic indicators (GDP, Treasury Rates, Unemployment Rate, Housing Prices, CPI) and deposit volume changes.
 2. **Forecasting:** Predict deposit behaviors under Federal Reserve’s stress test scenarios to inform strategic decision-making.
 3. **Exposure Analysis:** Quantify the bank’s profit/loss exposure under varying future conditions.
-
----
 
 ## Key Contributions
 
@@ -39,8 +33,6 @@ This project develops a robust model to forecast domestic deposit volumes under 
 
 6. **Documentation and Reproducibility**:
    - Includes clear markdown explanations, code comments, and visualizations to ensure the notebook is easy to understand and replicate.
-
----
 
 ### Conclusion
 
