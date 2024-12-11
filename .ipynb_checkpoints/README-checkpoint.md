@@ -14,15 +14,15 @@ This project develops a robust model to forecast domestic deposit volumes under 
 
 ## Correlations
 
-<img width="522" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/corr.png">
+<img width="800" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/corr.png">
 
 ## Real Deposit Curve vs Model-based Predicted Curve
 
-<img width="522" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/pred_deposit.png">
+<img width="800" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/pred_deposit.png">
 
 ## Predicted Profit Under Four Scenarios
 
-<img width="522" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/pred_profit.png">
+<img width="800" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/pred_profit.png">
 
 ## Key Contributions
 
