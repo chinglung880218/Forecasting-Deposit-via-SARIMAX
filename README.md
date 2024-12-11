@@ -2,75 +2,55 @@
 ### by Jiayi Wang & Ching-Lung Hsu
 
 ## Overview
-This project focuses on forecasting deposit volumes to support Asset Liability Management (ALM) using time series techniques, specifically SARIMAX (Seasonal AutoRegressive Integrated Moving Average with exogenous factors). The project aims to provide actionable insights for managing liquidity, funding costs, and interest rate risks by leveraging historical data and macroeconomic indicators. Additionally, it incorporates scenario analysis to evaluate deposit behavior under varying economic conditions.
+
+---
+
+This project develops a robust model to forecast domestic deposit volumes under varying macroeconomic conditions, leveraging **SARIMAX** (Seasonal AutoRegressive Integrated Moving Average with Exogenous Variables). **This approach offers interpretability, scenario-specific forecasting, and insights into a bank’s financial exposure.** By incorporating key macroeconomic drivers such as GDP, Treasury rates, unemployment rates, housing prices, and CPI, the model provides a comprehensive view of how external factors influence deposit trends. Additionally, scenario-based modeling using Federal Reserve stress test scenarios ensures the forecasts align with realistic economic conditions, enhancing their applicability to strategic decision-making. The results empower treasury teams with actionable insights to optimize liquidity planning, interest rate risk management, and overall balance sheet resilience.
 
 ---
 
 ## Objectives
-- Develop a robust framework to predict deposit volumes based on historical trends and macroeconomic variables.
-- Explore the sensitivity of deposit levels to key macroeconomic factors (e.g., GDP, unemployment, Treasury rates).
-- Simulate deposit behavior under baseline and stress scenarios to assess potential liquidity needs.
-- Provide recommendations to optimize balance sheet strategies within an ALM framework.
+1. **Interpretability:** Analyze the correlations and influence between macroeconomic indicators (GDP, Treasury Rates, Unemployment Rate, Housing Prices, CPI) and deposit volume changes.
+2. **Forecasting:** Predict deposit behaviors under Federal Reserve’s stress test scenarios to inform strategic decision-making.
+3. **Exposure Analysis:** Quantify the bank’s profit/loss exposure under varying future conditions.
 
 ---
 
-## Methodology
-### 1. Data Collection
-- **Sources**: FDIC Quarterly Banking Profiles, Federal Reserve Economic Data (FRED), and other relevant financial datasets.
-- **Scope**: Historical deposit data and macroeconomic indicators such as GDP, unemployment rate, CPI, and Treasury rates.
+## Key Contributions
 
-### 2. Exploratory Data Analysis (EDA)
-- Analyze trends, seasonality, and correlations between deposits and macroeconomic variables.
-- Segment deposits into categories (e.g., core vs. rate-sensitive deposits).
+1. **Scenario-Based Forecasting Framework**:
+   - Implements a SARIMAX model to predict domestic deposit volumes under different macroeconomic scenarios.
+   - Forecasts are aligned with Federal Reserve-inspired stress-testing scenarios for realistic and actionable insights.
 
-### 3. Forecasting Models
-#### Baseline Model:
-- **SARIMAX**: Predict deposit growth using time series data with exogenous macroeconomic variables.
-- **Evaluation Metrics**: Mean Absolute Error (MAE), Root Mean Squared Error (RMSE).
+2. **Integration of Macroeconomic Drivers**:
+   - Analyzes the impact of economic indicators such as GDP, Treasury rates, unemployment rates, housing prices, and CPI on deposit volumes.
+   - Provides interpretability by quantifying correlations between external factors and deposit behavior.
 
-#### Enhanced Forecasting:
-- Integrate macroeconomic indicators into SARIMAX to model deposit sensitivity to external factors.
-- Test alternative methods (e.g., VAR) for comparison.
+3. **Data Processing and Pre-modeling Insights**:
+   - Includes preprocessing steps such as handling missing data and selecting key variables for modeling.
+   - Visualizes trends and relationships for preliminary insights into deposit dynamics.
 
-### 4. Scenario Analysis and Stress Testing
-- Simulate deposit behavior under Federal Reserve stress-test scenarios (e.g., severely adverse, adverse, baseline).
-- Quantify potential deposit outflows and liquidity gaps in stress conditions.
+4. **Stress Testing for Risk Assessment**:
+   - Simulates deposit behavior under multiple economic scenarios to evaluate potential risks and their impact on the bank’s balance sheet.
 
-### 5. Validation
-- Split data into training and testing sets for model performance evaluation.
-- Back-test forecasts against historical stress events.
+5. **Actionable Outputs for Treasury Teams**:
+   - Provides forecasts to support liquidity planning and interest rate risk management.
+   - Offers practical tools to enhance strategic resilience.
+
+6. **Documentation and Reproducibility**:
+   - Includes clear markdown explanations, code comments, and visualizations to ensure the notebook is easy to understand and replicate.
 
 ---
 
-## Deliverables
-1. **Forecasting Framework**:  
-   - A time series model for predicting deposit volumes under baseline and stress scenarios.
-2. **Scenario-Based Insights**:  
-   - Analysis of deposit trends and liquidity needs under varying economic conditions.
-3. **Sensitivity Analysis**:  
-   - Quantification of deposit response to changes in macroeconomic variables.
-4. **Visualization**:  
-   - Interactive dashboards or static plots illustrating key findings.
-5. **Recommendations**:  
-   - Practical strategies for managing liquidity and funding within an ALM context.
+### Conclusion
 
----
+This project offers a practical and insightful approach for banks to navigate complex economic environments. By leveraging a combination of seasonal patterns, macroeconomic indicators, and scenario-based stress testing, the model delivers actionable forecasts tailored for strategic asset-liability management. The assumption of a fixed Loan-to-Deposit Ratio simplifies the forecasting process, focusing attention on deposit behavior and its implications for liquidity and interest rate risk management.
 
-## Tools and Skills
-### Programming
-- **Python**: Libraries include pandas, statsmodels, scikit-learn, matplotlib, and Plotly.
+This analysis empowers financial institutions to:
+- Anticipate deposit volume fluctuations under various macroeconomic scenarios.
+- Strengthen liquidity planning by ensuring adequate funding to meet operational and regulatory requirements.
+- Mitigate interest rate risk by providing a clear understanding of deposit sensitivity to economic changes.
+- Enhance decision-making with a transparent, reproducible, and well-documented forecasting framework.
 
-### Data Sources
-- FDIC Quarterly Banking Profiles
-- Federal Reserve Economic Data (FRED)
-
-### Statistical Techniques
-- SARIMAX modeling
-
----
-
-## Value Proposition
-This project bridges data analytics and financial decision-making by providing a comprehensive deposit forecasting model. It demonstrates practical ALM applications, equipping users with tools to analyze and respond to changes in deposit volumes under different economic scenarios.
-
----
+In conclusion, this project bridges advanced econometric modeling with practical applications, making it an invaluable tool for optimizing balance sheet strategies and ensuring financial resilience.
 
