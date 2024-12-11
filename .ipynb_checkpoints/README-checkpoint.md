@@ -14,33 +14,35 @@ This project develops a robust model to forecast domestic deposit volumes under 
 
 ## Correlations
 
+<img width="522" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/corr.png">
+
 ## Real Deposit Curve vs Model-based Predicted Curve
+
+<img width="522" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/pred_deposit.png">
 
 ## Predicted Profit Under Four Scenarios
 
+<img width="522" alt="image" src="https://github.com/chinglung880218/deposit-prediction/blob/main/figs/pred_profit.png">
+
 ## Key Contributions
 
-1. **Scenario-Based Forecasting Framework**:
-   - Implements a SARIMAX model to predict domestic deposit volumes under different macroeconomic scenarios.
-   - Forecasts are aligned with Federal Reserve-inspired stress-testing scenarios for realistic and actionable insights.
+**Scenario-Based Forecasting Framework**:  
+We implemented a SARIMAX model specifically designed to predict domestic deposit volumes under diverse macroeconomic scenarios. By aligning the forecasts with Federal Reserve-inspired stress-testing frameworks, we ensured the model delivers realistic and actionable insights, directly applicable to financial risk management.
 
-2. **Integration of Macroeconomic Drivers**:
-   - Analyzes the impact of economic indicators such as GDP, Treasury rates, unemployment rates, housing prices, and CPI on deposit volumes.
-   - Provides interpretability by quantifying correlations between external factors and deposit behavior.
+**Integration of Macroeconomic Drivers**:  
+This approach incorporates key economic indicators—such as GDP, Treasury rates, unemployment rates, housing prices, and CPI—into the forecasting process. By capturing and quantifying the relationships between these variables and deposit behaviors, the model provides a transparent and interpretable foundation for strategic decision-making.
 
-3. **Data Processing and Pre-modeling Insights**:
-   - Includes preprocessing steps such as handling missing data and selecting key variables for modeling.
-   - Visualizes trends and relationships for preliminary insights into deposit dynamics.
+**Streamlined Data Processing and Insights**:  
+We developed a robust data preprocessing pipeline, addressing challenges like missing data and selecting critical variables for analysis. Additionally, we generated insightful visualizations to uncover trends and correlations, offering a deeper understanding of deposit volume dynamics before modeling.
 
-4. **Stress Testing for Risk Assessment**:
-   - Simulates deposit behavior under multiple economic scenarios to evaluate potential risks and their impact on the bank’s balance sheet.
+**Advanced Stress Testing for Risk Analysis**:  
+The model simulates deposit behaviors across multiple economic scenarios, providing a clear perspective on potential risks. This enables treasury teams to assess the impact of macroeconomic volatility on the bank’s balance sheet with greater confidence.
 
-5. **Actionable Outputs for Treasury Teams**:
-   - Provides forecasts to support liquidity planning and interest rate risk management.
-   - Offers practical tools to enhance strategic resilience.
+**Practical Tools for Treasury Teams**:  
+Our forecasts are tailored to support critical functions such as liquidity planning and interest rate risk management. By offering actionable insights, the model helps enhance the resilience and efficiency of treasury operations.
 
-6. **Documentation and Reproducibility**:
-   - Includes clear markdown explanations, code comments, and visualizations to ensure the notebook is easy to understand and replicate.
+**Reproducibility and Transparency**:  
+The notebook is fully documented, featuring clear markdown explanations, detailed code comments, and visualizations. This ensures the methodology is easy to understand, replicate, and adapt for future use cases.
 
 ### Conclusion
 
