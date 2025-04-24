@@ -58,6 +58,6 @@ In conclusion, this project bridges advanced econometric modeling with practical
 
 ### Reference:
 
-FDIC Quarterly Banking Profile: https://www.fdic.gov/quarterly-banking-profile
-Dodd-Frank Act Stress Tests 2024: https://www.federalreserve.gov/supervisionreg/dfa-stress-tests-2024.htm
-FRED Deposit Data: https://fred.stlouisfed.org/series/DPSACBW027SBOG#
+- FDIC Quarterly Banking Profile: https://www.fdic.gov/quarterly-banking-profile
+- Dodd-Frank Act Stress Tests 2024: https://www.federalreserve.gov/supervisionreg/dfa-stress-tests-2024.htm
+- FRED Deposit Data: https://fred.stlouisfed.org/series/DPSACBW027SBOG#
